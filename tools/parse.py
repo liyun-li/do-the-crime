@@ -54,6 +54,8 @@ def sentence_months(title, paras):
     vals = set(); kinds = set()
     for rx, kind in ((RX_PRISON, 'prison'), (RX_TERM, 'prison'), (RX_PROB, 'probation')):
         for m in rx.finditer(body):
+            if re.search(r'\b(?:\d+|' + NW + r')\s+(?:to|and|or)\s+$', body[max(0, m.start('dur') - 24):m.start('dur')], re.I):
+                return None, 'range'   # "36 to 109 months": a span (or several defendants), not one sentence
             v = months_of(m)
             if v is None: continue
             vals.add(0.0 if kind == 'probation' else v); kinds.add(kind)

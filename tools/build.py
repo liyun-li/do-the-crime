@@ -1,12 +1,16 @@
 #!/usr/bin/env python3
 """Do The Crime data builder. Clients never call justice.gov: this runs once a day in GitHub Actions
-(or locally with --from DIR) and writes ../cases.json.  Stdlib only."""
+(or locally with --from DIR) and writes tools/review_queue.json.  Stdlib only.
+
+The game itself plays only the hand-curated, hand-verified curated.json.  New auto-parsed
+releases land in the review queue for a human to check (sentence, wording, exclusions) and
+promote by hand via curate/picks.tsv; nothing auto-parsed goes straight into play."""
 import json, os, re, sys, time, glob, datetime, urllib.request, collections
 sys.path.insert(0, os.path.dirname(__file__))
 import parse as P
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-OUT = os.path.join(ROOT, 'cases.json'); ZH = os.path.join(ROOT, 'tools', 'zh.json'); VOC = os.path.join(ROOT, 'tools', 'vocab.txt')
+OUT = os.path.join(ROOT, 'tools', 'review_queue.json'); CUR = os.path.join(ROOT, 'curated.json'); ZH = os.path.join(ROOT, 'tools', 'zh.json'); VOC = os.path.join(ROOT, 'tools', 'vocab.txt')
 UA = 'DoTheCrimeGame/1.0 (+https://github.com/liyun-li/do-the-crime; once-daily cached fetch)'
 API = 'https://www.justice.gov/api/v1/press_releases.json?pagesize=50&page=%d&sort=date&direction=DESC&parameters%%5Btitle%%5D=sentenced'
 MAX_REQ = int(os.environ.get('DTC_MAX_REQ', '12'))   # hard cap per refresh
@@ -121,7 +125,7 @@ def main():
             if not res or all((r.get('uuid') or '')[:12] in known for r in res): break
             time.sleep(2)
         if not items:
-            print('API unreachable; keeping previous cases.json (requests=%d)' % REQ); return 0
+            print('API unreachable; keeping previous review queue (requests=%d)' % REQ); return 0
     if not P.VOCAB:
         cnt = collections.Counter()
         for r in items:
@@ -143,6 +147,8 @@ def main():
         dupe[key] = c['id']; new[c['id']] = c; stats['kept'] += 1
     today = datetime.date.today().isoformat()
     DROP = set(open(os.path.join(ROOT,'tools','drop.txt')).read().split()) if os.path.exists(os.path.join(ROOT,'tools','drop.txt')) else set()
+    CURATED = {c['id'] for c in json.load(open(CUR))['cases']} if os.path.exists(CUR) else set()
+    DROP |= CURATED   # already promoted: no need to review again
     merged = {k: v for k, v in old.items() if k not in DROP}
     for k, c in new.items():
         if k in DROP: stats['hand-dropped'] += 1; continue
@@ -154,7 +160,8 @@ def main():
     cases = sorted(merged.values(), key=lambda c: (c['a'], c['id']), reverse=True)[:POOL_MAX]
     cases.sort(key=lambda c: c['id'])
     mix = collections.Counter(c['g'] for c in cases)
-    out = {'n': len(cases), 'mix': dict(sorted(mix.items())), 'cases': cases}
+    out = {'note': 'REVIEW QUEUE - not played. Verify against the DOJ link before promoting via curate/picks.tsv.',
+           'n': len(cases), 'mix': dict(sorted(mix.items())), 'cases': cases}
     print('stats', dict(stats))
     print('pool', len(cases), 'new', len(set(new) - set(old)), 'mix', dict(mix))
     if '--dry' in sys.argv: return 0

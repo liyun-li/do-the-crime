@@ -17,13 +17,13 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Fetch newest sentencing releases (capped, polite) and rebuild cases.json
+      - name: Fetch newest sentencing releases (capped, polite) and rebuild the review queue (not played)
         run: python tools/build.py | tee refresh.log
       - name: Commit only if something changed
         run: |
           git config user.name "do-the-crime-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add cases.json tools/vocab.txt tools/places.txt tools/seen.txt
+          git add tools/review_queue.json tools/vocab.txt tools/places.txt tools/seen.txt
           if git diff --cached --quiet; then echo "No change ($(grep -o 'requests this refresh.*' refresh.log | head -1))"; exit 0; fi
-          git commit -m "Refresh DOJ cases: $(grep -o 'requests this refresh.*' refresh.log | head -1)"
+          git commit -m "Refresh DOJ review queue: $(grep -o 'requests this refresh.*' refresh.log | head -1)"
           git push

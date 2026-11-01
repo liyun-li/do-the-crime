@@ -22,8 +22,8 @@ h1.q,h1.note{margin:0}h1.note{font-weight:inherit}
 .app{width:100%;max-width:40rem;min-width:0;min-height:100vh;min-height:100dvh;display:flex;flex-direction:column;
  gap:clamp(.3rem,1.2dvh,.7rem);padding:calc(clamp(.3rem,1.1dvh,.7rem) + env(safe-area-inset-top)) calc(clamp(.45rem,3vw,1rem) + env(safe-area-inset-right)) calc(clamp(.3rem,1.1dvh,.7rem) + env(safe-area-inset-bottom)) calc(clamp(.45rem,3vw,1rem) + env(safe-area-inset-left))}
 body.ingame .app,body.atend .app{height:100vh;height:100dvh;min-height:0}
-.top{display:flex;align-items:center;gap:.4rem;min-width:0;flex:none}
-.logo{flex:1 1 auto;min-width:0;font:900 clamp(.75rem,min(4vw,2.6dvh),1.1rem)/1.1 var(--mono);letter-spacing:.06em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;background:none;border:0;text-align:left;color:var(--ink)}
+.top{display:flex;align-items:center;gap:.4rem;min-width:0;flex:none;container-type:inline-size}
+.logo{flex:1 1 auto;min-width:0;font:900 min(1.1rem,5.2cqi,3dvh)/1 var(--mono);letter-spacing:.04em;overflow-wrap:normal;background:none;border:0;text-align:left;color:var(--ink)}
 .logo b{color:var(--hot)}
 .pill{flex:0 0 auto;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font:800 clamp(.62rem,min(3vw,2dvh),.85rem) var(--mono);border:1px solid #ffffff40;border-radius:999px;padding:.25em .6em}
 .icon{flex:none;background:none;border:1px solid #ffffff40;border-radius:999px;font-size:clamp(.62rem,min(3vw,2dvh),.85rem);padding:.25em .5em;line-height:1.2}
@@ -37,7 +37,7 @@ a{color:var(--lnk)}
 .big{font:900 clamp(2.1rem,min(14vw,10dvh),4.8rem)/.92 var(--mono);letter-spacing:-.01em;text-transform:uppercase}
 .big b{color:var(--hot);display:block}
 .big.zh{font-family:var(--sans);letter-spacing:.04em;white-space:nowrap}.big.zh b{display:inline}
-.sub{color:var(--mut);font-size:clamp(.8rem,min(4.2vw,2.7dvh),1.1rem);max-width:26rem;line-height:1.35}
+.sub{color:var(--mut);font-size:clamp(.8rem,min(4.2vw,2.7dvh),1.1rem);max-width:26rem;line-height:1.35;text-wrap:balance}
 .note{font-size:clamp(.62rem,min(3.1vw,1.9dvh),.8rem);color:var(--mut);max-width:28rem;line-height:1.35}
 .btns{display:flex;flex-wrap:wrap;gap:clamp(.35rem,1.4dvh,.7rem);justify-content:center;align-items:center}
 .cta{background:var(--hot);color:#1a0d08;border:0;border-radius:.7rem;font-weight:900;font-size:clamp(1rem,min(6vw,3.6dvh),1.4rem);padding:clamp(.4rem,1.5dvh,.75rem) clamp(1.3rem,8vw,2.4rem);box-shadow:0 .25rem 0 #000a;letter-spacing:.03em}
@@ -75,7 +75,7 @@ a{color:var(--lnk)}
 @keyframes pop{40%{transform:scale(1.035)}}
 @keyframes shake{20%{transform:translateX(-3%)}40%{transform:translateX(3%)}60%{transform:translateX(-2%)}80%{transform:translateX(1%)}}
 .foot{flex:none;display:flex;align-items:center;gap:.5rem;min-height:clamp(2.2rem,7dvh,3.4rem)}
-.quip{flex:1 1 auto;min-width:0;font-weight:800;font-size:clamp(.72rem,min(3.8vw,2.4dvh),1rem);line-height:1.2;color:var(--hot2)}
+.quip{flex:1 1 auto;min-width:0;font-weight:800;font-size:clamp(.72rem,min(3.8vw,2.4dvh),1rem);line-height:1.2;color:var(--hot2);display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden;text-wrap:balance}
 .quip.hint{color:var(--mut);font-weight:600;text-align:center}
 #next{flex:none;font-size:clamp(.9rem,min(5vw,3dvh),1.25rem);padding:clamp(.35rem,1.2dvh,.6rem) clamp(1rem,6vw,1.8rem)}
 #game.wait #next{display:none}
@@ -86,7 +86,7 @@ a{color:var(--lnk)}
 /* end */
 .score{font:900 clamp(3rem,min(22vw,15dvh),7rem)/.9 var(--mono);color:var(--hot)}
 .grid{font-size:clamp(.8rem,min(4.2vw,2.8dvh),1.15rem);letter-spacing:.05em;max-width:100%;overflow-wrap:anywhere;line-height:1.3}
-.loss{background:var(--bg2);border-radius:.7rem;padding:clamp(.35rem,1.4dvh,.75rem) clamp(.6rem,3vw,1rem);font-size:clamp(.72rem,min(3.7vw,2.4dvh),.95rem);line-height:1.35;max-width:30rem;text-align:left;display:flex;flex-direction:column;gap:.3em}
+.loss{background:var(--bg2);border-radius:.7rem;padding:clamp(.35rem,1.4dvh,.75rem) clamp(.6rem,3vw,1rem);font-size:clamp(.72rem,min(3.7vw,2.4dvh),.95rem);line-height:1.35;max-width:min(30rem,100%);min-width:0;box-sizing:border-box;text-align:left;display:flex;flex-direction:column;gap:.3em}
 .loss b{color:var(--hot2)}
 .loss .row{display:flex;justify-content:space-between;gap:.6rem}.loss .row span:first-child{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.loss .row span:last-child{flex:none;font-family:var(--mono);font-weight:800}
 dialog{margin:auto;max-width:min(36rem,calc(100vw - 1.2rem));max-height:calc(100dvh - 1.2rem);width:100%;border:0;border-radius:.8rem;background:var(--bg2);color:var(--ink);padding:0;overflow:hidden}
@@ -160,7 +160,7 @@ const T={en:{logo:'DO THE <b>CRIME</b>',big:'Do the<b>crime</b>',tag:'Two real f
  q:'Who got <b>more time</b>?',next:'NEXT',retry:'RETRY',share:'SHARE',again:'PLAY AGAIN',seen:'Cases',seenT:'Cases this run',close:'Close',
  hint:'Tap the one that got more prison time.',load:'Loading cases…',fail:'Couldn’t load the cases. Check your connection.',src:'DOJ ↗',srcL:'Read the DOJ press release',
  best:b=>`Best streak: ${b}`,bestD:b=>`Today’s daily: ${b}`,pill:(s,b)=>`🔥 ${s}<span class="pb"> · best ${b}</span>`,dailyOn:d=>`Daily · ${d}`,endless:'Endless',
- known:'Sentenced to',unk:'Sentenced to',mo:n=>n===1?'1 month':`${n} months`,ym:(y,m)=>`${y} yr${y>1?'s':''}`+(m?` ${m} mo`:''),life:'LIFE',prob:'Probation',probS:'no prison',
+ known:'Sentenced to',unk:'Sentenced to',mo:n=>n===1?'1 month':`${n} months`,dy:n=>n===1?'1 day':`${n} days`,ym:(y,m)=>`${y} yr${y>1?'s':''}`+(m?` ${m} mo`:''),life:'LIFE',prob:'Probation',probS:'no prison',
  ok:['CALLED IT','SUSTAINED','NAILED IT','GUILTY (of being right)','CORRECT'],no:['OVERRULED','OBJECTION!','NOPE','MISTRIAL','BUSTED'],
  rank:s=>s>=15?'Sentencing commission material.':s>=10?'Honorary law clerk.':s>=6?'Solid paralegal energy.':s>=3?'Jury’s still out.':'Plea deal recommended.',
  lossT:'The one that got you',more:'more',x:r=>`${r}× the time.`,
@@ -172,7 +172,7 @@ zh:{logo:'關<b>多久</b>？',big:'關<b>多久</b>？',tag:'兩個真實的美
  q:'誰被關<b>比較久</b>？',next:'下一題',retry:'重試',share:'分享',again:'再玩一次',seen:'案件',seenT:'這局看過的案件',close:'關閉',
  hint:'點你覺得被關比較久的那一個。',load:'案件載入中…',fail:'案件載入失敗，請檢查網路連線。',src:'司法部原文 ↗',srcL:'閱讀美國司法部新聞稿原文',
  best:b=>`最佳連勝：${b}`,bestD:b=>`今日挑戰：${b}`,pill:(s,b)=>`🔥 ${s}<span class="pb">・最佳 ${b}</span>`,dailyOn:d=>`每日挑戰・${d}`,endless:'無限模式',
- known:'判刑',unk:'判刑',mo:n=>`${n} 個月`,ym:(y,m)=>`${y} 年`+(m?` ${m} 個月`:''),life:'無期徒刑',prob:'緩刑',probS:'不用關',
+ known:'判刑',unk:'判刑',mo:n=>`${n} 個月`,dy:n=>`${n} 天`,ym:(y,m)=>`${y} 年`+(m?` ${m} 個月`:''),life:'無期徒刑',prob:'緩刑',probS:'不用關',
  ok:['猜中啦','神準','抗議成立','有你的','正解'],no:['駁回','異議！','翻車','差得遠','再審'],
  rank:s=>s>=15?'量刑委員會等你上任。':s>=10?'可以去當法官助理了。':s>=6?'有法律系學長姐的架勢。':s>=3?'陪審團還在討論。':'建議認罪協商。',
  lossT:'讓你翻車的那題',more:'更久',x:r=>`差了 ${r} 倍。`,
@@ -194,10 +194,10 @@ function bests(){const S=t(),b=+localStorage.getItem('dtc_best')||0,dd=JSON.pars
 const today=()=>new Date().toISOString().slice(0,10);
 // ---------- data ----------
 async function load(){if(D)return true;show('loading');$('loadMsg').textContent=t().load;$('retryBtn').hidden=true;
- try{const r=await fetch('cases.json',{cache:'no-cache'});if(!r.ok)throw 0;D=await r.json();return true}catch(e){$('loadMsg').textContent=t().fail;$('retryBtn').hidden=false;return false}}
+ try{const r=await fetch('curated.json',{cache:'no-cache'});if(!r.ok)throw 0;D=await r.json();return true}catch(e){$('loadMsg').textContent=t().fail;$('retryBtn').hidden=false;return false}}
 function rng(seed){let h=1779033703^seed.length;for(let i=0;i<seed.length;i++){h=Math.imul(h^seed.charCodeAt(i),3432918353);h=h<<13|h>>>19}
  return()=>{h=Math.imul(h^h>>>16,2246822507);h=Math.imul(h^h>>>13,3266489909);return((h^=h>>>16)>>>0)/4294967296}}
-const HARD=new Set(['firearm','drugs','violent','threat','theft']),SOFT=new Set(['fraud','tax','covid','health','corruption','crypto','cyber','wildlife','mail','other']);
+const HARD=new Set(['firearm','drugs','violent','threat','theft']),SOFT=new Set(['fraud','tax','covid','health','corruption','crypto','cyber','wildlife','mail','other','air','sport']);
 const val=c=>c.k==='life'?2400:Math.max(c.m,1);
 function band(s){return s<3?[3,99]:s<6?[2,6]:s<10?[1.5,3]:[1.2,2]}
 function challenger(champ,streak,R,seen){const [lo,hi]=band(streak),v=val(champ);
@@ -205,7 +205,7 @@ function challenger(champ,streak,R,seen){const [lo,hi]=band(streak),v=val(champ)
  if(cand.length<4)cand=POOL.filter(c=>!seen.has(c.id)&&c.id!==champ.id&&Math.max(val(c),v)/Math.min(val(c),v)>=1.2);
  // keep higher/lower balanced, prefer a different category, and at higher streaks prefer counterintuitive pairs
  const up=R()<.5;let side=cand.filter(c=>(val(c)>v)===up);if(side.length)cand=side;
- const diff=cand.filter(c=>c.g!==champ.g);if(diff.length&&R()<.85)cand=diff;
+ const diff=cand.filter(c=>c.g!==champ.g);if(diff.length&&R()<.97)cand=diff;
  if(streak<4&&HARD.has(champ.g)&&R()<.8){const sf=cand.filter(c=>SOFT.has(c.g));if(sf.length)cand=sf}
  if(R()<(streak>=4?.5:.3)){const cx=cand.filter(c=>{const big=val(c)>v?c:champ,small=big===c?champ:c;return SOFT.has(big.g)&&HARD.has(small.g)});if(cx.length)cand=cx}
  // spread categories: weight down the very common ones
@@ -219,7 +219,7 @@ function newRun(mode){POOL=poolFor(mode);const seed=mode==='daily'?'dtc-'+today(
  run={mode,seed,R,a:champ,b:null,streak:0,seen,hist:[],picked:null,ids:[champ.id]};run.b=challenger(champ,0,R,seen);seen.add(run.b.id);run.ids.push(run.b.id);save()}
 function save(){if(!run)return;localStorage.setItem('dtc_run',JSON.stringify({mode:run.mode,seed:run.seed,streak:run.streak,ids:run.ids,hist:run.hist,day:today()}))}
 // ---------- render ----------
-function fmt(c,m){const S=t();if(c.k==='life'&&m===undefined)return S.life;if(c.k==='probation')return S.prob;m=m===undefined?c.m:m;m=Math.round(m);
+function fmt(c,m){const S=t();if(c.k==='life'&&m===undefined)return S.life;if(c.k==='probation')return S.prob;if(c.dy)return S.dy(m===undefined?c.dy:Math.max(1,Math.round(m/c.m*c.dy)));m=m===undefined?c.m:m;m=Math.round(m);
  return m<24?S.mo(m):S.ym(Math.floor(m/12),m%12)}
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 function txt(c){return L==='en'||!c.zc?{s:c.s,c:c.c}:{s:c.zs||'',c:c.zc}}
@@ -240,7 +240,7 @@ function quip(a,b){const S=t().quips,big=val(a)>=val(b)?a:b,small=big===a?b:a,r=
 let AC=null;function beep(f,d){if(!sound)return;try{AC=AC||new AudioContext();const o=AC.createOscillator(),g=AC.createGain();o.frequency.value=f;o.type='square';g.gain.value=.04;o.connect(g).connect(AC.destination);o.start();o.stop(AC.currentTime+d)}catch(e){}}
 function count(el,c,done){const target=c.k==='life'?600:c.m;if(c.k==='probation'||matchMedia('(prefers-reduced-motion:reduce)').matches){el.textContent=fmt(c);done&&done();return}
  const t0=performance.now(),dur=900;let lastTick=0;(function step(now){const p=Math.min(1,(now-t0)/dur),e=1-Math.pow(1-p,3),m=target*e;
-  el.textContent=p<1?fmt({k:'prison'},m):fmt(c);if(now-lastTick>70&&p<1){beep(300+600*e,.03);lastTick=now}
+  el.textContent=p<1?fmt({k:'prison',m:c.m,dy:c.dy},m):fmt(c);if(now-lastTick>70&&p<1){beep(300+600*e,.03);lastTick=now}
   if(p<1)requestAnimationFrame(step);else{done&&done()}})(t0)}
 function choose(k){if(!run||run.picked||busy)return;const a=run.a,b=run.b,pickedA=k==='A';const aWins=val(a)>val(b);const ok=pickedA===aWins;
  run.picked=k;run.ok=ok;run.hist.push(ok?1:0);if(ok)run.streak++;

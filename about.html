@@ -42,11 +42,11 @@ li{margin:.2rem 0}
 <li>Multi-defendant releases are skipped, so every sentence belongs to one person.</li>
 </ul>
 <h2>How the sentence is read</h2>
-<p>A script reads the headline and first paragraphs and turns "X years and Y months" into months. Life counts as "longer than anything". Probation-only sentences show as "Probation". If a release has more than one prison term, consecutive pieces with no stated total, "time served" or home confinement, or a headline that disagrees with the text, it's skipped rather than guessed. Spot checks against the full text matched, but the parsing is automatic, so always trust the linked release over the card.</p>
+<p>Every case in play was picked by hand and its sentence checked by hand against the release text (a script did the first pass, and it got a few wrong, which is why nothing goes in unchecked). Life counts as "longer than anything". Probation-only sentences show as "Probation"; very short terms show in days. The linked release always wins over the card.</p>
 <h2>The one-liners</h2>
-<p>The crime line is cut straight from the DOJ headline or first sentence. Nothing is written by an AI. The Chinese versions were translated by hand from those lines, which is why Chinese mode and the Daily chain use a smaller, translated pool.</p>
+<p>The pool is a curated set of the strangest, most surprising sentenced cases. The one-liners are rewritten to be short and funny, drafted with an AI assistant and checked line by line against the release: the facts come from DOJ, only the wording is ours. The jokes are about the crime, never about who someone is. English and Chinese play the same pool, and the Daily chain is the same for everyone.</p>
 <h2>Zero load on justice.gov</h2>
-<p>Your browser never contacts justice.gov. Once a day, a GitHub Action checks the DOJ press-release API politely: a few requests at most, spaced out, and it stops when it reaches cases it already has. It saves the results to a static <code>cases.json</code> served by GitHub Pages, and commits only when something changed.</p>
+<p>Your browser never contacts justice.gov. Once a day, a GitHub Action checks the DOJ press-release API politely: a few requests at most, spaced out, and it stops when it reaches cases it already has. New releases go into a review queue (<code>tools/review_queue.json</code>), not straight into the game; a human promotes the good ones after checking them. Players only download the static <code>curated.json</code>.</p>
 <h2>Why sentences differ</h2>
 <p>Federal sentences depend on the guidelines, mandatory minimums, criminal history, plea deals, cooperation, restitution and more. A short press-release line can't capture any of that. The point is the surprise, not a verdict on anyone.</p>
 </section>
@@ -64,11 +64,11 @@ li{margin:.2rem 0}
 <li>多名被告的新聞稿一律跳過，所以每個刑期都只屬於一個人。</li>
 </ul>
 <h2>刑期怎麼算</h2>
-<p>程式讀標題和前幾段，把「X 年 Y 個月」換算成月數。無期徒刑算「比什麼都久」，只判緩刑的顯示「緩刑」。遇到同一篇有好幾個刑期、分段累加卻沒寫總和、「以羈押抵刑」或居家監禁，或者標題跟內文對不上，都直接跳過，不用猜的。抽查對照原文都吻合，但這是自動解析，一切以連結的原始新聞稿為準。</p>
+<p>遊戲裡每一案都是人工挑的，刑期也逐一對照新聞稿原文人工核對過（程式先跑過一輪，結果真的抓錯幾筆，所以沒核對過的一律不上）。無期徒刑算「比什麼都久」，只判緩刑的顯示「緩刑」，很短的刑期用天數顯示。一切以連結的原始新聞稿為準。</p>
 <h2>罪名短句</h2>
-<p>英文罪名直接擷取自 DOJ 標題或第一句，不是 AI 寫的。中文版是根據英文短句人工翻譯的，所以中文模式和每日挑戰只用已翻譯的案件，題庫比較小。</p>
+<p>題庫是精選過的：最怪、最出乎意料的量刑案件。短句改寫得短又好笑，由 AI 助理起草、再逐句對照新聞稿核對：事實來自 DOJ，只有措辭是我們的。笑點只針對犯行本身，絕不針對任何人的身分。中英文玩的是同一組題庫，每日挑戰人人相同。</p>
 <h2>不給 justice.gov 添麻煩</h2>
-<p>你的瀏覽器從頭到尾都不會連到 justice.gov。GitHub Action 每天一次，客客氣氣地查一下 DOJ 新聞稿 API：最多幾個請求，彼此隔開，碰到已經有的案件就停。結果存成 GitHub Pages 上的靜態 <code>cases.json</code>，而且只有內容有變才會提交。</p>
+<p>你的瀏覽器從頭到尾都不會連到 justice.gov。GitHub Action 每天一次，客客氣氣地查一下 DOJ 新聞稿 API：最多幾個請求，彼此隔開，碰到已經有的案件就停。新案件先進審核佇列（<code>tools/review_queue.json</code>），不會直接進遊戲，要有人核對過才會收進題庫。玩家只會下載靜態的 <code>curated.json</code>。</p>
 <h2>為什麼刑期差這麼多</h2>
 <p>美國聯邦刑期取決於量刑準則、法定最低刑、前科、認罪協商、配合調查、賠償等等，一行新聞稿短句寫不出這些。好玩的是那份意外，不是在審判任何人。</p>
 </section>
