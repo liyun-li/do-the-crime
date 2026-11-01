@@ -25,7 +25,7 @@ body.ingame .app,body.atend .app{height:100vh;height:100dvh;min-height:0}
 .top{display:flex;align-items:center;gap:.4rem;min-width:0;flex:none}
 .logo{flex:1 1 auto;min-width:0;font:900 clamp(.75rem,min(4vw,2.6dvh),1.1rem)/1.1 var(--mono);letter-spacing:.06em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;background:none;border:0;text-align:left;color:var(--ink)}
 .logo b{color:var(--hot)}
-.pill{flex:0 1 auto;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font:800 clamp(.62rem,min(3vw,2dvh),.85rem) var(--mono);border:1px solid #ffffff40;border-radius:999px;padding:.25em .6em}
+.pill{flex:0 0 auto;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font:800 clamp(.62rem,min(3vw,2dvh),.85rem) var(--mono);border:1px solid #ffffff40;border-radius:999px;padding:.25em .6em}
 .icon{flex:none;background:none;border:1px solid #ffffff40;border-radius:999px;font-size:clamp(.62rem,min(3vw,2dvh),.85rem);padding:.25em .5em;line-height:1.2}
 .lang{flex:none;display:flex;border:1px solid #ffffff40;border-radius:999px;background:none;overflow:hidden;font:800 clamp(.62rem,min(3vw,2dvh),.8rem) var(--sans);color:var(--mut);padding:0}
 .lang span{padding:.3em .55em}.lang span.on{background:var(--ink);color:var(--bg)}
@@ -225,7 +225,7 @@ const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',
 function txt(c){return L==='en'||!c.zc?{s:c.s,c:c.c}:{s:c.zs||'',c:c.zc}}
 function card(id,c,known){const x=txt(c),S=t();const meta=[x.s,c.y,stateName(c.st)].filter(Boolean).join(' · ');
  const el=$(id==='A'?'cA':'cB'),p=$(id==='A'?'pA':'pB');el.classList.toggle('known',known);
- p.innerHTML=`<span class="meta">${esc(meta)}</span><span class="crime">${esc(x.c)}</span><span class="time"><span class="lbl">${S.known}</span><span class="num${known?'':' q2'}">${known?esc(fmt(c)):'?'}</span></span>`;
+ p.innerHTML=`<span class="meta">${esc(meta)}</span><span class="crime">${esc(x.c.charAt(0).toUpperCase()+x.c.slice(1))}</span><span class="time"><span class="lbl">${S.known}</span><span class="num${known?'':' q2'}">${known?esc(fmt(c)):'?'}</span></span>`;
  p.setAttribute('aria-label',`${x.c}. ${meta}. ${S.known} ${known?fmt(c):'?'}`)}
 const ST={'Florida':'佛羅里達','Texas':'德州','California':'加州','New York':'紐約','Montana':'蒙大拿','South Dakota':'南達科他','Massachusetts':'麻州','District of Columbia':'華府','Virginia':'維吉尼亞','Indiana':'印第安納','Iowa':'愛荷華','Louisiana':'路易斯安那','Connecticut':'康乃狄克','Ohio':'俄亥俄','Pennsylvania':'賓州','Georgia':'喬治亞','North Carolina':'北卡','South Carolina':'南卡','Tennessee':'田納西','Kentucky':'肯塔基','Alabama':'阿拉巴馬','Mississippi':'密西西比','Arkansas':'阿肯色','Missouri':'密蘇里','Kansas':'堪薩斯','Nebraska':'內布拉斯加','Oklahoma':'奧克拉荷馬','Colorado':'科羅拉多','Utah':'猶他','Nevada':'內華達','Arizona':'亞利桑那','New Mexico':'新墨西哥','Washington':'華盛頓州','Oregon':'奧勒岡','Idaho':'愛達荷','Wyoming':'懷俄明','North Dakota':'北達科他','Minnesota':'明尼蘇達','Wisconsin':'威斯康辛','Michigan':'密西根','Illinois':'伊利諾','New Jersey':'紐澤西','Delaware':'德拉瓦','Maryland':'馬里蘭','West Virginia':'西維吉尼亞','Maine':'緬因','New Hampshire':'新罕布夏','Vermont':'佛蒙特','Rhode Island':'羅德島','Alaska':'阿拉斯加','Hawaii':'夏威夷','Puerto Rico':'波多黎各','Guam':'關島','Virgin Islands':'美屬維京群島','Northern Mariana Islands':'北馬里亞納'};
 const stateName=s=>!s?'':L==='en'?s:(ST[s]||s);
