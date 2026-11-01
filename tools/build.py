@@ -129,7 +129,7 @@ def main():
         P.VOCAB.update(w for w, n in cnt.items() if n >= 2)
         open(VOC, 'w').write('\n'.join(sorted(P.VOCAB)))
     PL = os.path.join(ROOT, 'tools', 'places.txt')
-    if os.path.exists(PL): P.PLACES.update(open(PL).read().split())
+    if os.path.exists(PL): P.PLACES.update(l for l in open(PL).read().splitlines() if l.strip())
     for r in items: P.harvest_places(P.clean_html(r.get('body')))
     open(PL, 'w').write('\n'.join(sorted(P.PLACES)))
     zh = json.load(open(ZH)) if os.path.exists(ZH) else {}
