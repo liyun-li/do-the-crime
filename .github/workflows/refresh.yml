@@ -1,0 +1,29 @@
+name: Refresh DOJ cases
+on:
+  schedule:
+    - cron: '41 19 * * *'   # once a day (03:41 Taipei)
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: refresh
+  cancel-in-progress: false
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Fetch newest sentencing releases (capped, polite) and rebuild cases.json
+        run: python tools/build.py | tee refresh.log
+      - name: Commit only if something changed
+        run: |
+          git config user.name "do-the-crime-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add cases.json tools/vocab.txt tools/places.txt tools/seen.txt
+          if git diff --cached --quiet; then echo "No change ($(grep -o 'requests this refresh.*' refresh.log | head -1))"; exit 0; fi
+          git commit -m "Refresh DOJ cases: $(grep -o 'requests this refresh.*' refresh.log | head -1)"
+          git push

@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>About · Do The Crime ⚖️</title>
+<meta name="description" content="How Do The Crime works: real DOJ press releases, sentences after conviction, no names, no faces.">
+<meta name="theme-color" content="#14110f">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%2314110f'/%3E%3Cpath d='M8 6v20M13 6v20M19 6v20M24 6v20' stroke='%23ff4d2e' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E">
+<style>
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{margin:0;background:#14110f;color:#f3e9d8;font:400 clamp(.95rem,3.8vw,1.05rem)/1.55 system-ui,-apple-system,"Segoe UI",Roboto,"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;overflow-wrap:anywhere}
+main{max-width:42rem;margin:0 auto;padding:1rem clamp(.9rem,5vw,1.5rem) 3rem}
+h1{font-size:clamp(1.4rem,7vw,2rem);margin:.4rem 0 .2rem;letter-spacing:.02em}
+h1 b{color:#ff4d2e}
+h2{font-size:1.05rem;margin:1.6rem 0 .3rem;color:#ffb000}
+a{color:#ffb000}
+.top{display:flex;justify-content:space-between;align-items:center;gap:.6rem;flex-wrap:wrap}
+.btn{display:inline-block;border:2px solid #ffffff55;border-radius:.6rem;padding:.35rem .8rem;color:#f3e9d8;text-decoration:none;font-weight:800}
+ul{padding-left:1.2rem}
+li{margin:.2rem 0}
+.muted{color:#b9ab98}
+[hidden]{display:none!important}
+</style>
+</head>
+<body>
+<main>
+<div class="top"><a class="btn" id="back" href="./">← <span data-en>Play</span><span data-zh hidden>回遊戲</span></a>
+<a class="btn" id="sw" href="?lang=zh">中文</a></div>
+
+<section data-en>
+<h1>DO THE <b>CRIME</b> ⚖️</h1>
+<p class="muted">Two real federal cases. Which one got more prison time?</p>
+<h2>Where the cases come from</h2>
+<p>Every case comes from a U.S. Department of Justice press release, published on <a href="https://www.justice.gov/news">justice.gov</a>. DOJ press releases are U.S. government works and are in the public domain. Each card links back to its original release ("DOJ ↗"). This game has no connection to the DOJ or any other agency, and the DOJ doesn't endorse it.</p>
+<h2>What's in, what's out</h2>
+<ul>
+<li>Only releases that announce a <b>sentence</b>, which is imposed after a conviction (a guilty plea or a verdict). There are no arrests, indictments or pending charges.</li>
+<li><b>No names and no photos.</b> Defendant names are removed, and you only see a short description ("Ohio man"), the year, the state and the crime.</li>
+<li><b>Excluded entirely:</b> sex crimes, crimes against children, homicides and deaths, kidnapping, shootings, domestic and partner violence, hate crimes, terrorism, immigration offenses, serious-injury assaults, and any release with a victim's name in the crime line.</li>
+<li>Multi-defendant releases are skipped, so every sentence belongs to one person.</li>
+</ul>
+<h2>How the sentence is read</h2>
+<p>A script reads the headline and first paragraphs and turns "X years and Y months" into months. Life counts as "longer than anything". Probation-only sentences show as "Probation". If a release has more than one prison term, consecutive pieces with no stated total, "time served" or home confinement, or a headline that disagrees with the text, it's skipped rather than guessed. Spot checks against the full text matched, but the parsing is automatic, so always trust the linked release over the card.</p>
+<h2>The one-liners</h2>
+<p>The crime line is cut straight from the DOJ headline or first sentence. Nothing is written by an AI. The Chinese versions were translated by hand from those lines, which is why Chinese mode and the Daily chain use a smaller, translated pool.</p>
+<h2>Zero load on justice.gov</h2>
+<p>Your browser never contacts justice.gov. Once a day, a GitHub Action checks the DOJ press-release API politely: a few requests at most, spaced out, and it stops when it reaches cases it already has. It saves the results to a static <code>cases.json</code> served by GitHub Pages, and commits only when something changed.</p>
+<h2>Why sentences differ</h2>
+<p>Federal sentences depend on the guidelines, mandatory minimums, criminal history, plea deals, cooperation, restitution and more. A short press-release line can't capture any of that. The point is the surprise, not a verdict on anyone.</p>
+</section>
+
+<section data-zh hidden lang="zh-Hant-TW">
+<h1>關多久？⚖️</h1>
+<p class="muted">兩件真實的美國聯邦案件，猜猜哪一個被關比較久。</p>
+<h2>案件從哪裡來</h2>
+<p>每一案都來自美國司法部（DOJ）發布在 <a href="https://www.justice.gov/news">justice.gov</a> 的新聞稿。DOJ 新聞稿屬於美國政府著作，是公有領域。每張卡片都附上原始新聞稿連結（「DOJ ↗」）。本遊戲與司法部或任何機關都沒有關係，也沒有得到他們的背書。</p>
+<h2>收什麼、不收什麼</h2>
+<ul>
+<li>只收宣布<b>量刑</b>的新聞稿，也就是認罪或判決有罪之後的刑期。不收逮捕、起訴或還在審的案子。</li>
+<li><b>不放姓名、不放照片。</b>被告姓名一律拿掉，只留簡短描述（例如「男子」）、年份、州名和罪名。</li>
+<li><b>完全排除：</b>性犯罪、針對兒童的犯罪、命案與死亡、綁架、槍擊、家暴與伴侶暴力、仇恨犯罪、恐怖主義、移民案件、造成重傷的傷害案，以及罪名裡出現被害人姓名的新聞稿。</li>
+<li>多名被告的新聞稿一律跳過，所以每個刑期都只屬於一個人。</li>
+</ul>
+<h2>刑期怎麼算</h2>
+<p>程式讀標題和前幾段，把「X 年 Y 個月」換算成月數。無期徒刑算「比什麼都久」，只判緩刑的顯示「緩刑」。遇到同一篇有好幾個刑期、分段累加卻沒寫總和、「以羈押抵刑」或居家監禁，或者標題跟內文對不上，都直接跳過，不用猜的。抽查對照原文都吻合，但這是自動解析，一切以連結的原始新聞稿為準。</p>
+<h2>罪名短句</h2>
+<p>英文罪名直接擷取自 DOJ 標題或第一句，不是 AI 寫的。中文版是根據英文短句人工翻譯的，所以中文模式和每日挑戰只用已翻譯的案件，題庫比較小。</p>
+<h2>不給 justice.gov 添麻煩</h2>
+<p>你的瀏覽器從頭到尾都不會連到 justice.gov。GitHub Action 每天一次，客客氣氣地查一下 DOJ 新聞稿 API：最多幾個請求，彼此隔開，碰到已經有的案件就停。結果存成 GitHub Pages 上的靜態 <code>cases.json</code>，而且只有內容有變才會提交。</p>
+<h2>為什麼刑期差這麼多</h2>
+<p>美國聯邦刑期取決於量刑準則、法定最低刑、前科、認罪協商、配合調查、賠償等等，一行新聞稿短句寫不出這些。好玩的是那份意外，不是在審判任何人。</p>
+</section>
+</main>
+<script>
+(function(){var q=new URLSearchParams(location.search).get('lang');var s=null;try{s=localStorage.getItem('dtc_lang')}catch(e){}
+var zh=q?q==='zh':s?s==='zh':/^zh/i.test(navigator.language||'');
+document.documentElement.lang=zh?'zh-Hant-TW':'en';document.title=zh?'關於 · 關多久？⚖️':'About · Do The Crime ⚖️';
+document.querySelectorAll('[data-en]').forEach(function(e){e.hidden=zh});document.querySelectorAll('[data-zh]').forEach(function(e){e.hidden=!zh});
+var sw=document.getElementById('sw');sw.textContent=zh?'English':'中文';sw.href='?lang='+(zh?'en':'zh');sw.lang=zh?'en':'zh-Hant-TW';
+document.getElementById('back').href='./?lang='+(zh?'zh':'en');})();
+</script>
+</body>
+</html>

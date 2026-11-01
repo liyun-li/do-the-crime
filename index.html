@@ -1,0 +1,297 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Do The Crime ⚖️</title>
+<meta name="description" content="Two real federal cases. Who got more prison time? A higher-or-lower game on real US sentences from DOJ press releases.">
+<meta name="theme-color" content="#14110f">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%2314110f'/%3E%3Cpath d='M8 6v20M13 6v20M19 6v20M24 6v20' stroke='%23ff4d2e' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E">
+<meta property="og:type" content="website"><meta property="og:url" content="https://liyun-li.github.io/do-the-crime/">
+<meta property="og:title" content="Do The Crime ⚖️ — who got more time?"><meta property="og:description" content="Two real federal cases side by side. Guess which one got more prison time. Federal sentencing is weirder than you think.">
+<meta property="og:image" content="https://liyun-li.github.io/do-the-crime/og.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="Do The Crime: two case cards and the question who got more time.">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="https://liyun-li.github.io/do-the-crime/og.png">
+<style>
+:root{--bg:#14110f;--bg2:#1f1a17;--ink:#f6efe6;--mut:#b9ada0;--card:#f3e9d8;--cink:#1d1712;--hot:#ff4d2e;--hot2:#ffb000;--grn:#2fbf71;--red:#ff4d2e;--lnk:#ffd27a;
+--sans:system-ui,-apple-system,"Segoe UI",Roboto,"PingFang TC","Noto Sans TC","Noto Sans CJK TC","Microsoft JhengHei",sans-serif;
+--mono:ui-monospace,"SF Mono",Menlo,Consolas,"PingFang TC","Noto Sans TC","Noto Sans CJK TC",monospace}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html,body{height:100%;overflow-x:clip}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);display:flex;justify-content:center}
+[hidden]{display:none!important}
+h1.q,h1.note{margin:0}h1.note{font-weight:inherit}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.app{width:100%;max-width:40rem;min-width:0;min-height:100vh;min-height:100dvh;display:flex;flex-direction:column;
+ gap:clamp(.3rem,1.2dvh,.7rem);padding:calc(clamp(.3rem,1.1dvh,.7rem) + env(safe-area-inset-top)) calc(clamp(.45rem,3vw,1rem) + env(safe-area-inset-right)) calc(clamp(.3rem,1.1dvh,.7rem) + env(safe-area-inset-bottom)) calc(clamp(.45rem,3vw,1rem) + env(safe-area-inset-left))}
+body.ingame .app,body.atend .app{height:100vh;height:100dvh;min-height:0}
+.top{display:flex;align-items:center;gap:.4rem;min-width:0;flex:none}
+.logo{flex:1 1 auto;min-width:0;font:900 clamp(.75rem,min(4vw,2.6dvh),1.1rem)/1.1 var(--mono);letter-spacing:.06em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;background:none;border:0;text-align:left;color:var(--ink)}
+.logo b{color:var(--hot)}
+.pill{flex:0 1 auto;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font:800 clamp(.62rem,min(3vw,2dvh),.85rem) var(--mono);border:1px solid #ffffff40;border-radius:999px;padding:.25em .6em}
+.icon{flex:none;background:none;border:1px solid #ffffff40;border-radius:999px;font-size:clamp(.62rem,min(3vw,2dvh),.85rem);padding:.25em .5em;line-height:1.2}
+.lang{flex:none;display:flex;border:1px solid #ffffff40;border-radius:999px;background:none;overflow:hidden;font:800 clamp(.62rem,min(3vw,2dvh),.8rem) var(--sans);color:var(--mut);padding:0}
+.lang span{padding:.3em .55em}.lang span.on{background:var(--ink);color:var(--bg)}
+button{font:inherit;cursor:pointer;color:inherit}
+a{color:var(--lnk)}
+:focus-visible{outline:3px solid var(--hot2);outline-offset:2px}
+.screen{display:none;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:clamp(.35rem,2dvh,1rem);flex:1 1 auto;min-height:0}
+.screen.on{display:flex}
+.big{font:900 clamp(2.1rem,min(14vw,10dvh),4.8rem)/.92 var(--mono);letter-spacing:-.01em;text-transform:uppercase}
+.big b{color:var(--hot);display:block}
+.big.zh{font-family:var(--sans);letter-spacing:.04em;white-space:nowrap}.big.zh b{display:inline}
+.sub{color:var(--mut);font-size:clamp(.8rem,min(4.2vw,2.7dvh),1.1rem);max-width:26rem;line-height:1.35}
+.note{font-size:clamp(.62rem,min(3.1vw,1.9dvh),.8rem);color:var(--mut);max-width:28rem;line-height:1.35}
+.btns{display:flex;flex-wrap:wrap;gap:clamp(.35rem,1.4dvh,.7rem);justify-content:center;align-items:center}
+.cta{background:var(--hot);color:#1a0d08;border:0;border-radius:.7rem;font-weight:900;font-size:clamp(1rem,min(6vw,3.6dvh),1.4rem);padding:clamp(.4rem,1.5dvh,.75rem) clamp(1.3rem,8vw,2.4rem);box-shadow:0 .25rem 0 #000a;letter-spacing:.03em}
+.cta:active,.ghost:active{transform:translateY(2px);box-shadow:none}
+.ghost{background:none;border:2px solid #ffffff55;border-radius:.7rem;padding:clamp(.3rem,1.2dvh,.6rem) clamp(.8rem,4vw,1.3rem);font-weight:800;font-size:clamp(.8rem,min(4vw,2.6dvh),1rem);color:var(--ink)}
+.ghost small{display:block;font-weight:600;color:var(--mut);font-size:.75em}
+.links{display:flex;gap:1rem;flex-wrap:wrap;justify-content:center;font-size:clamp(.62rem,min(3.1vw,1.9dvh),.8rem)}
+.links a{color:var(--mut)}
+.bests{font:800 clamp(.7rem,min(3.4vw,2.2dvh),.9rem) var(--mono);color:var(--hot2)}
+/* game */
+#game{display:none;flex-direction:column;gap:clamp(.25rem,1dvh,.55rem);flex:1 1 0;min-height:0}
+#game.on{display:flex}
+.q{flex:none;text-align:center;font-weight:900;font-size:clamp(.85rem,min(4.6vw,2.9dvh),1.25rem);letter-spacing:.01em}
+.q b{color:var(--hot)}
+.arena{flex:1 1 0;min-height:0;display:flex;flex-direction:column;gap:clamp(.2rem,.8dvh,.45rem);position:relative}
+.vs{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:3;background:var(--hot);color:#1a0d08;font:900 clamp(.65rem,min(3.2vw,2.2dvh),.9rem) var(--mono);border-radius:999px;padding:.3em .55em;box-shadow:0 0 0 .25em var(--bg);pointer-events:none}
+.case{flex:1 1 0;min-height:0;min-width:0;position:relative;container-type:size;border-radius:.8rem;background:var(--card);color:var(--cink);box-shadow:0 .3rem 0 #000a;overflow:hidden;transition:transform .15s}
+.pick{position:absolute;inset:0;width:100%;height:100%;border:0;background:none;color:inherit;text-align:left;display:flex;flex-direction:column;justify-content:center;gap:clamp(.1rem,3cqh,.6rem);padding:clamp(.35rem,6cqh,1rem) clamp(.5rem,5cqi,1.1rem);border-radius:inherit}
+.pick:disabled{cursor:default}
+.meta{font:700 clamp(.55rem,min(3.6cqi,8cqh),.85rem)/1.2 var(--mono);color:#6d5f50;letter-spacing:.03em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;flex:none}
+.crime{font-weight:850;font-size:clamp(.62rem,min(7.4cqi,12.5cqh),2.1rem);line-height:1.15;overflow:hidden;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:5;text-wrap:balance;flex:0 1 auto;min-height:0}
+.time{flex:none;display:flex;align-items:baseline;gap:.4em;font:900 clamp(.8rem,min(8cqi,17cqh),2.4rem)/1 var(--mono);color:var(--cink)}
+.time .lbl{font:700 clamp(.5rem,min(3.2cqi,7cqh),.8rem) var(--sans);color:#6d5f50;letter-spacing:.04em;text-transform:uppercase}
+.time .num.q2{color:var(--hot)}
+.case.known{background:#fff6e6}
+.case.win .time .num{color:#0f7a43}
+.case.lose{filter:saturate(.6) brightness(.93)}
+.src{position:absolute;right:.5em;bottom:.45em;z-index:2;font:800 clamp(.55rem,min(3.4cqi,7.5cqh),.8rem) var(--sans);color:#5b3c00;background:#ffffffb0;border-radius:999px;padding:.2em .6em;text-decoration:none;border:1px solid #0002}
+.stamp{position:absolute;right:4%;top:8%;z-index:2;pointer-events:none;font:900 clamp(.8rem,min(9cqi,18cqh),2.6rem)/1 var(--mono);text-transform:uppercase;letter-spacing:.04em;border:.14em solid currentColor;border-radius:.25em;padding:.1em .3em;transform:rotate(-12deg) scale(2.4);opacity:0;mix-blend-mode:multiply}
+.stamp.ok{color:#0f8a4b}.stamp.no{color:#d8321b}
+.stamp.on{animation:slam .38s cubic-bezier(.2,1.6,.4,1) forwards}
+@keyframes slam{to{transform:rotate(-12deg) scale(1);opacity:.92}}
+.case.good{animation:pop .35s ease-out}
+.case.bad{animation:shake .45s}
+@keyframes pop{40%{transform:scale(1.035)}}
+@keyframes shake{20%{transform:translateX(-3%)}40%{transform:translateX(3%)}60%{transform:translateX(-2%)}80%{transform:translateX(1%)}}
+.foot{flex:none;display:flex;align-items:center;gap:.5rem;min-height:clamp(2.2rem,7dvh,3.4rem)}
+.quip{flex:1 1 auto;min-width:0;font-weight:800;font-size:clamp(.72rem,min(3.8vw,2.4dvh),1rem);line-height:1.2;color:var(--hot2)}
+.quip.hint{color:var(--mut);font-weight:600;text-align:center}
+#next{flex:none;font-size:clamp(.9rem,min(5vw,3dvh),1.25rem);padding:clamp(.35rem,1.2dvh,.6rem) clamp(1rem,6vw,1.8rem)}
+#game.wait #next{display:none}
+.flash{position:fixed;inset:0;pointer-events:none;z-index:9;opacity:0}
+.flash.ok{background:radial-gradient(circle,#2fbf7155,transparent 70%);animation:fl .5s}
+.flash.no{background:radial-gradient(circle,#ff4d2e66,transparent 70%);animation:fl .6s}
+@keyframes fl{20%{opacity:1}}
+/* end */
+.score{font:900 clamp(3rem,min(22vw,15dvh),7rem)/.9 var(--mono);color:var(--hot)}
+.grid{font-size:clamp(.8rem,min(4.2vw,2.8dvh),1.15rem);letter-spacing:.05em;max-width:100%;overflow-wrap:anywhere;line-height:1.3}
+.loss{background:var(--bg2);border-radius:.7rem;padding:clamp(.35rem,1.4dvh,.75rem) clamp(.6rem,3vw,1rem);font-size:clamp(.72rem,min(3.7vw,2.4dvh),.95rem);line-height:1.35;max-width:30rem;text-align:left;display:flex;flex-direction:column;gap:.3em}
+.loss b{color:var(--hot2)}
+.loss .row{display:flex;justify-content:space-between;gap:.6rem}.loss .row span:first-child{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.loss .row span:last-child{flex:none;font-family:var(--mono);font-weight:800}
+dialog{margin:auto;max-width:min(36rem,calc(100vw - 1.2rem));max-height:calc(100dvh - 1.2rem);width:100%;border:0;border-radius:.8rem;background:var(--bg2);color:var(--ink);padding:0;overflow:hidden}
+dialog[open]{display:flex;flex-direction:column}
+dialog::backdrop{background:#000b}
+.dh .x{flex:none;white-space:nowrap}.dh{gap:.6rem;display:flex;justify-content:space-between;align-items:center;padding:.6rem .9rem;border-bottom:1px solid #fff2;font-weight:900;flex:none}
+.db{overflow:auto;padding:.6rem .9rem;display:flex;flex-direction:column;gap:.55rem;font-size:clamp(.75rem,3.6vw,.92rem);line-height:1.35}
+.db li{list-style:none;border-bottom:1px solid #ffffff14;padding-bottom:.5rem}
+.db li b{font-family:var(--mono);color:var(--hot2)}
+.x{background:none;border:1px solid #fff4;border-radius:.4rem;padding:.2rem .6rem}
+#loading{color:var(--mut)}
+@media (orientation:landscape) and (min-aspect-ratio:4/3){
+ .app{max-width:min(68rem,100%)}
+ .arena{flex-direction:row}
+ .crime{-webkit-line-clamp:6}
+}
+@media (max-height:430px){#start .note.disc{display:none}#loss{display:none}}
+@media (max-width:340px){.pb{display:none}}
+@media (max-height:340px){#start .sub{display:none}}
+@media (prefers-reduced-motion:reduce){*{animation-duration:.01s!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div class="app">
+ <header class="top">
+  <button class="logo" id="home" aria-label="Do The Crime — home"><span data-i="logo">DO THE <b>CRIME</b></span></button>
+  <span class="pill" id="pill" aria-live="polite">🔥 0</span>
+  <button class="icon" id="snd" aria-pressed="false" aria-label="Sound">🔇</button>
+  <button class="lang" id="langBtn" aria-label="Language / 語言"><span data-l="en">EN</span><span data-l="zh-Hant">中</span></button>
+ </header>
+ <main class="screen on" id="start">
+  <h1 class="big" id="bigT">Do the<b>crime</b></h1>
+  <p class="sub" data-i="tag">Two real federal cases. Which one got more prison time?</p>
+  <p class="bests" id="bests"></p>
+  <div class="btns">
+   <button class="cta" id="goBtn" data-i="play">PLAY</button>
+   <button class="ghost" id="dailyBtn"><span data-i="daily">Daily chain</span><small id="dailyDate"></small></button>
+  </div>
+  <p class="note disc" data-i="disc">Real DOJ press releases. No names, no faces — just the crime and the time. Every sentence here was imposed after a conviction.</p>
+  <nav class="links"><a href="about.html" id="aboutLink" data-i="about">About &amp; sources</a></nav>
+ </main>
+ <main id="game" class="wait" aria-labelledby="qq">
+  <h1 class="q" id="qq" data-i="q">Who got <b>more time</b>?</h1>
+  <div class="arena">
+   <div class="case" id="cA"><button class="pick" id="pA"></button><div class="stamp" aria-hidden="true"></div></div>
+   <div class="vs" aria-hidden="true">VS</div>
+   <div class="case" id="cB"><button class="pick" id="pB"></button><div class="stamp" aria-hidden="true"></div></div>
+  </div>
+  <div class="foot"><p class="quip hint" id="quip" aria-live="polite"></p><button class="cta" id="next" data-i="next">NEXT</button></div>
+ </main>
+ <main class="screen" id="loading"><p id="loadMsg">Loading cases…</p><button class="ghost" id="retryBtn" hidden data-i="retry">RETRY</button></main>
+ <main class="screen" id="end">
+  <h1 class="note" id="endMode"></h1>
+  <div class="score" id="endScore">0</div>
+  <p class="sub" id="endRank"></p>
+  <p class="grid" id="endGrid" aria-hidden="true"></p>
+  <div class="loss" id="loss"></div>
+  <div class="btns">
+   <button class="cta" id="shareBtn" data-i="share">SHARE</button>
+   <button class="ghost" id="againBtn" data-i="again">PLAY AGAIN</button>
+   <button class="ghost" id="seenBtn" data-i="seen">Cases</button>
+  </div>
+ </main>
+</div>
+<div class="flash" id="flash"></div>
+<dialog id="dlg" aria-labelledby="dlgT"><div class="dh"><span id="dlgT" data-i="seenT">Cases this run</span><button class="x" id="dlgX" data-i="close">Close</button></div><ul class="db" id="dlgB"></ul></dialog>
+<script>
+const $=s=>document.getElementById(s);
+const T={en:{logo:'DO THE <b>CRIME</b>',big:'Do the<b>crime</b>',tag:'Two real federal cases. Which one got more prison time?',play:'PLAY',daily:'Daily chain',
+ disc:'Real DOJ press releases. No names, no faces — just the crime and the time. Every sentence here was imposed after a conviction.',about:'About & sources',
+ q:'Who got <b>more time</b>?',next:'NEXT',retry:'RETRY',share:'SHARE',again:'PLAY AGAIN',seen:'Cases',seenT:'Cases this run',close:'Close',
+ hint:'Tap the one that got more prison time.',load:'Loading cases…',fail:'Couldn’t load the cases. Check your connection.',src:'DOJ ↗',srcL:'Read the DOJ press release',
+ best:b=>`Best streak: ${b}`,bestD:b=>`Today’s daily: ${b}`,pill:(s,b)=>`🔥 ${s}<span class="pb"> · best ${b}</span>`,dailyOn:d=>`Daily · ${d}`,endless:'Endless',
+ known:'Sentenced to',unk:'Sentenced to',mo:n=>n===1?'1 month':`${n} months`,ym:(y,m)=>`${y} yr${y>1?'s':''}`+(m?` ${m} mo`:''),life:'LIFE',prob:'Probation',probS:'no prison',
+ ok:['CALLED IT','SUSTAINED','NAILED IT','GUILTY (of being right)','CORRECT'],no:['OVERRULED','OBJECTION!','NOPE','MISTRIAL','BUSTED'],
+ rank:s=>s>=15?'Sentencing commission material.':s>=10?'Honorary law clerk.':s>=6?'Solid paralegal energy.':s>=3?'Jury’s still out.':'Plea deal recommended.',
+ lossT:'The one that got you',more:'more',x:r=>`${r}× the time.`,
+ quips:{soft:'Paperwork crime, serious time.',prob:'One of them went home.',life:'Life. As in, the rest of it.',close:'Closer than it looks.',
+  huge:r=>`${r}× the time. Justice math.`,same:'Same courthouse energy.',gen:['Justice is weird.','The guidelines have spoken.','Nobody saw that coming. Except the judge.','Federal sentencing: it’s complicated.','The math is mathing. Kind of.']},
+ shareT:(s,mode)=>`Do The Crime ⚖️ ${mode}: ${s} in a row`,yrs:'',dailyDone:s=>`Today: ${s} 🔥`,ago:'',miss:'Miss'},
+zh:{logo:'關<b>多久</b>？',big:'關<b>多久</b>？',tag:'兩個真實的美國聯邦案件，猜猜誰被關比較久。',play:'開始',daily:'每日挑戰',
+ disc:'資料來自美國司法部新聞稿。不放姓名、不放照片，只看罪名跟刑期。這裡每一筆刑期都是定罪後的判決。',about:'關於與資料來源',
+ q:'誰被關<b>比較久</b>？',next:'下一題',retry:'重試',share:'分享',again:'再玩一次',seen:'案件',seenT:'這局看過的案件',close:'關閉',
+ hint:'點你覺得被關比較久的那一個。',load:'案件載入中…',fail:'案件載入失敗，請檢查網路連線。',src:'司法部原文 ↗',srcL:'閱讀美國司法部新聞稿原文',
+ best:b=>`最佳連勝：${b}`,bestD:b=>`今日挑戰：${b}`,pill:(s,b)=>`🔥 ${s}<span class="pb">・最佳 ${b}</span>`,dailyOn:d=>`每日挑戰・${d}`,endless:'無限模式',
+ known:'判刑',unk:'判刑',mo:n=>`${n} 個月`,ym:(y,m)=>`${y} 年`+(m?` ${m} 個月`:''),life:'無期徒刑',prob:'緩刑',probS:'不用關',
+ ok:['猜中啦','神準','抗議成立','有你的','正解'],no:['駁回','異議！','翻車','差得遠','再審'],
+ rank:s=>s>=15?'量刑委員會等你上任。':s>=10?'可以去當法官助理了。':s>=6?'有法律系學長姐的架勢。':s>=3?'陪審團還在討論。':'建議認罪協商。',
+ lossT:'讓你翻車的那題',more:'更久',x:r=>`差了 ${r} 倍。`,
+ quips:{soft:'文書犯罪，刑期一點都不文。',prob:'其中一個直接回家。',life:'無期，就是字面上的無期。',close:'比你想的還接近。',
+  huge:r=>`差了 ${r} 倍，司法數學。`,same:'同一個法院的味道。',gen:['司法就是這麼玄。','量刑指南說了算。','沒人想到，除了法官。','聯邦量刑：很難說。','這數學，嗯，有點道理。']},
+ shareT:(s,mode)=>`關多久？⚖️ ${mode}：連對 ${s} 題`,dailyDone:s=>`今天：${s} 🔥`,miss:'失手'}};
+let L,D=null,POOL=[],run=null,busy=false,sound=localStorage.getItem('dtc_snd')==='1';
+function pickLang(){const q=new URLSearchParams(location.search).get('lang');if(q)return /^zh/i.test(q)?'zh-Hant':'en';const s=localStorage.getItem('dtc_lang');if(s)return s;
+ return (navigator.languages||[navigator.language||'en']).some(l=>/^zh(-(tw|hk|mo|hant))?/i.test(l)&&!/cn|sg|hans/i.test(l))||(navigator.languages||[]).some(l=>/^zh/i.test(l))?'zh-Hant':'en'}
+const t=()=>L==='en'?T.en:T.zh;
+function applyLang(){document.documentElement.lang=L==='en'?'en':'zh-Hant';const S=t();
+ document.querySelectorAll('[data-i]').forEach(e=>{const v=S[e.dataset.i];if(typeof v==='string')e.innerHTML=v});
+ $('bigT').innerHTML=S.big;$('bigT').classList.toggle('zh',L!=='en');document.querySelectorAll('.lang span').forEach(s=>s.classList.toggle('on',s.dataset.l===L));
+ document.title=L==='en'?'Do The Crime ⚖️':'關多久？⚖️ 美國聯邦刑期猜猜看';$('aboutLink').href='about.html?lang='+(L==='en'?'en':'zh');
+ $('dailyDate').textContent=today();$('home').setAttribute('aria-label',L==='en'?'Do The Crime — home':'關多久 — 回首頁');$('snd').setAttribute('aria-label',L==='en'?'Sound':'音效');
+ bests();if(run&&D)paint(true);if($('end').classList.contains('on'))endScreen(true)}
+function bests(){const S=t(),b=+localStorage.getItem('dtc_best')||0,dd=JSON.parse(localStorage.getItem('dtc_daily')||'{}');let s=S.best(b);if(dd.d===today())s+=' · '+S.bestD(dd.s);$('bests').textContent=b||dd.d===today()?s:'';
+ $('pill').innerHTML=S.pill(run?run.streak:0,b)}
+const today=()=>new Date().toISOString().slice(0,10);
+// ---------- data ----------
+async function load(){if(D)return true;show('loading');$('loadMsg').textContent=t().load;$('retryBtn').hidden=true;
+ try{const r=await fetch('cases.json',{cache:'no-cache'});if(!r.ok)throw 0;D=await r.json();return true}catch(e){$('loadMsg').textContent=t().fail;$('retryBtn').hidden=false;return false}}
+function rng(seed){let h=1779033703^seed.length;for(let i=0;i<seed.length;i++){h=Math.imul(h^seed.charCodeAt(i),3432918353);h=h<<13|h>>>19}
+ return()=>{h=Math.imul(h^h>>>16,2246822507);h=Math.imul(h^h>>>13,3266489909);return((h^=h>>>16)>>>0)/4294967296}}
+const HARD=new Set(['firearm','drugs','violent','threat','theft']),SOFT=new Set(['fraud','tax','covid','health','corruption','crypto','cyber','wildlife','mail','other']);
+const val=c=>c.k==='life'?2400:Math.max(c.m,1);
+function band(s){return s<3?[3,99]:s<6?[2,6]:s<10?[1.5,3]:[1.2,2]}
+function challenger(champ,streak,R,seen){const [lo,hi]=band(streak),v=val(champ);
+ let cand=POOL.filter(c=>!seen.has(c.id)&&c.id!==champ.id&&(c.k==='life'?champ.k!=='life':true)).filter(c=>{const r=Math.max(val(c),v)/Math.min(val(c),v);return r>=lo&&r<=hi&&!(c.k==='life'&&champ.k==='life')});
+ if(cand.length<4)cand=POOL.filter(c=>!seen.has(c.id)&&c.id!==champ.id&&Math.max(val(c),v)/Math.min(val(c),v)>=1.2);
+ // keep higher/lower balanced, prefer a different category, and at higher streaks prefer counterintuitive pairs
+ const up=R()<.5;let side=cand.filter(c=>(val(c)>v)===up);if(side.length)cand=side;
+ const diff=cand.filter(c=>c.g!==champ.g);if(diff.length&&R()<.85)cand=diff;
+ if(streak<4&&HARD.has(champ.g)&&R()<.8){const sf=cand.filter(c=>SOFT.has(c.g));if(sf.length)cand=sf}
+ if(R()<(streak>=4?.5:.3)){const cx=cand.filter(c=>{const big=val(c)>v?c:champ,small=big===c?champ:c;return SOFT.has(big.g)&&HARD.has(small.g)});if(cx.length)cand=cx}
+ // spread categories: weight down the very common ones
+ const cnt={};for(const c of cand)cnt[c.g]=(cnt[c.g]||0)+1;const w=cand.map(c=>1/Math.sqrt(cnt[c.g]));let s=w.reduce((a,b)=>a+b,0)*R();
+ for(let i=0;i<cand.length;i++){s-=w[i];if(s<=0)return cand[i]}return cand[cand.length-1]}
+function poolFor(mode){const all=D.cases;const tr=all.filter(c=>c.zc);
+ if(mode==='daily'){const d=today();return tr.filter(c=>c.a<d)}
+ return L==='en'?all:tr}
+function newRun(mode){POOL=poolFor(mode);const seed=mode==='daily'?'dtc-'+today():String(Math.random());const R=rng(seed);
+ let firsts=POOL.filter(c=>c.k==='prison'&&c.m>=12&&c.m<=120);if(R()<.7)firsts=firsts.filter(c=>SOFT.has(c.g));const champ=firsts[Math.floor(R()*firsts.length)];const seen=new Set([champ.id]);
+ run={mode,seed,R,a:champ,b:null,streak:0,seen,hist:[],picked:null,ids:[champ.id]};run.b=challenger(champ,0,R,seen);seen.add(run.b.id);run.ids.push(run.b.id);save()}
+function save(){if(!run)return;localStorage.setItem('dtc_run',JSON.stringify({mode:run.mode,seed:run.seed,streak:run.streak,ids:run.ids,hist:run.hist,day:today()}))}
+// ---------- render ----------
+function fmt(c,m){const S=t();if(c.k==='life'&&m===undefined)return S.life;if(c.k==='probation')return S.prob;m=m===undefined?c.m:m;m=Math.round(m);
+ return m<24?S.mo(m):S.ym(Math.floor(m/12),m%12)}
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+function txt(c){return L==='en'||!c.zc?{s:c.s,c:c.c}:{s:c.zs||'',c:c.zc}}
+function card(id,c,known){const x=txt(c),S=t();const meta=[x.s,c.y,stateName(c.st)].filter(Boolean).join(' · ');
+ const el=$(id==='A'?'cA':'cB'),p=$(id==='A'?'pA':'pB');el.classList.toggle('known',known);
+ p.innerHTML=`<span class="meta">${esc(meta)}</span><span class="crime">${esc(x.c)}</span><span class="time"><span class="lbl">${S.known}</span><span class="num${known?'':' q2'}">${known?esc(fmt(c)):'?'}</span></span>`;
+ p.setAttribute('aria-label',`${x.c}. ${meta}. ${S.known} ${known?fmt(c):'?'}`)}
+const ST={'Florida':'佛羅里達','Texas':'德州','California':'加州','New York':'紐約','Montana':'蒙大拿','South Dakota':'南達科他','Massachusetts':'麻州','District of Columbia':'華府','Virginia':'維吉尼亞','Indiana':'印第安納','Iowa':'愛荷華','Louisiana':'路易斯安那','Connecticut':'康乃狄克','Ohio':'俄亥俄','Pennsylvania':'賓州','Georgia':'喬治亞','North Carolina':'北卡','South Carolina':'南卡','Tennessee':'田納西','Kentucky':'肯塔基','Alabama':'阿拉巴馬','Mississippi':'密西西比','Arkansas':'阿肯色','Missouri':'密蘇里','Kansas':'堪薩斯','Nebraska':'內布拉斯加','Oklahoma':'奧克拉荷馬','Colorado':'科羅拉多','Utah':'猶他','Nevada':'內華達','Arizona':'亞利桑那','New Mexico':'新墨西哥','Washington':'華盛頓州','Oregon':'奧勒岡','Idaho':'愛達荷','Wyoming':'懷俄明','North Dakota':'北達科他','Minnesota':'明尼蘇達','Wisconsin':'威斯康辛','Michigan':'密西根','Illinois':'伊利諾','New Jersey':'紐澤西','Delaware':'德拉瓦','Maryland':'馬里蘭','West Virginia':'西維吉尼亞','Maine':'緬因','New Hampshire':'新罕布夏','Vermont':'佛蒙特','Rhode Island':'羅德島','Alaska':'阿拉斯加','Hawaii':'夏威夷','Puerto Rico':'波多黎各','Guam':'關島','Virgin Islands':'美屬維京群島','Northern Mariana Islands':'北馬里亞納'};
+const stateName=s=>!s?'':L==='en'?s:(ST[s]||s);
+function paint(keep){const S=t();card('A',run.a,true);card('B',run.b,!!run.picked);
+ for(const k of['A','B']){const el=$('c'+k);el.classList.remove('win','lose','good','bad');el.querySelector('.stamp').className='stamp';el.querySelector('.stamp').textContent='';const old=el.querySelector('.src');if(old)old.remove()}
+ $('pA').disabled=$('pB').disabled=!!run.picked;$('game').classList.toggle('wait',!run.picked);
+ if(!run.picked){$('quip').className='quip hint';$('quip').textContent=S.hint}else reveal(true);bests()}
+function show(id){for(const s of['start','game','loading','end'])$(s).classList.toggle('on',s===id);document.body.classList.toggle('ingame',id==='game');document.body.classList.toggle('atend',id==='end')}
+function quip(a,b){const S=t().quips,big=val(a)>=val(b)?a:b,small=big===a?b:a,r=val(big)/val(small);
+ if(big.k==='life')return S.life;if(small.k==='probation')return S.prob;if(SOFT.has(big.g)&&HARD.has(small.g))return S.soft;if(r>=5)return S.huge(Math.round(r));if(r<1.5)return S.close;
+ const g=S.gen;return g[(a.id.charCodeAt(0)+b.id.charCodeAt(1))%g.length]}
+let AC=null;function beep(f,d){if(!sound)return;try{AC=AC||new AudioContext();const o=AC.createOscillator(),g=AC.createGain();o.frequency.value=f;o.type='square';g.gain.value=.04;o.connect(g).connect(AC.destination);o.start();o.stop(AC.currentTime+d)}catch(e){}}
+function count(el,c,done){const target=c.k==='life'?600:c.m;if(c.k==='probation'||matchMedia('(prefers-reduced-motion:reduce)').matches){el.textContent=fmt(c);done&&done();return}
+ const t0=performance.now(),dur=900;let lastTick=0;(function step(now){const p=Math.min(1,(now-t0)/dur),e=1-Math.pow(1-p,3),m=target*e;
+  el.textContent=p<1?fmt({k:'prison'},m):fmt(c);if(now-lastTick>70&&p<1){beep(300+600*e,.03);lastTick=now}
+  if(p<1)requestAnimationFrame(step);else{done&&done()}})(t0)}
+function choose(k){if(!run||run.picked||busy)return;const a=run.a,b=run.b,pickedA=k==='A';const aWins=val(a)>val(b);const ok=pickedA===aWins;
+ run.picked=k;run.ok=ok;run.hist.push(ok?1:0);if(ok)run.streak++;
+ const S=t();card('B',b,true);const num=$('pB').querySelector('.num');num.classList.remove('q2');busy=true;$('pA').disabled=$('pB').disabled=true;
+ count(num,b,()=>{busy=false;reveal(false)});
+ if(navigator.vibrate)try{navigator.vibrate(ok?20:[40,40,40])}catch(e){}
+ if(!ok){const best=+localStorage.getItem('dtc_best')||0;if(run.mode!=='daily'&&run.streak>best)localStorage.setItem('dtc_best',run.streak);
+  if(run.mode==='daily'){const dd=JSON.parse(localStorage.getItem('dtc_daily')||'{}');if(dd.d!==today())localStorage.setItem('dtc_daily',JSON.stringify({d:today(),s:run.streak}))}}
+ else{const best=+localStorage.getItem('dtc_best')||0;if(run.mode!=='daily'&&run.streak>best)localStorage.setItem('dtc_best',run.streak)}
+ save()}
+function reveal(instant){const S=t(),a=run.a,b=run.b,ok=run.ok,k=run.picked;const aWins=val(a)>val(b);
+ const W=$(aWins?'cA':'cB'),Lz=$(aWins?'cB':'cA');W.classList.add('win');Lz.classList.add('lose');
+ const P=$('c'+k);if(!instant)P.classList.add(ok?'good':'bad');const st=P.querySelector('.stamp');const list=ok?S.ok:S.no;st.textContent=list[(run.streak+run.hist.length)%list.length];st.className='stamp '+(ok?'ok':'no')+' on';
+ for(const [kk,c] of[['A',a],['B',b]]){const el=$('c'+kk);if(el.querySelector('.src'))continue;const l=document.createElement('a');l.className='src';l.href=c.u;l.target='_blank';l.rel='noopener';l.textContent=S.src;l.setAttribute('aria-label',S.srcL+' — '+txt(c).c);el.appendChild(l)}
+ $('quip').className='quip';$('quip').textContent=(ok?'':'✗ ')+quip(a,b);$('game').classList.remove('wait');
+ if(!instant){beep(ok?880:150,.12);const f=$('flash');f.className='flash';void f.offsetWidth;f.className='flash '+(ok?'ok':'no')}
+ $('next').textContent=ok?S.next:(L==='en'?'RESULTS':'看結果');$('next').focus({preventScroll:true});bests()}
+function next(){if(!run||!run.picked||busy)return;if(!run.ok){endScreen();return}
+ const champ=run.b;run.a=champ;run.picked=null;run.ok=null;run.b=challenger(champ,run.streak,run.R,run.seen);if(!run.b){endScreen();return}run.seen.add(run.b.id);run.ids.push(run.b.id);save();paint()}
+function endScreen(relang){const S=t();show('end');if(!relang)localStorage.removeItem('dtc_run');
+ $('endMode').textContent=run.mode==='daily'?S.dailyOn(today()):S.endless;$('endScore').textContent=run.streak;$('endRank').textContent=S.rank(run.streak);
+ $('endGrid').textContent='⚖️'+run.hist.map(x=>x?'🟩':'🟥').join('');
+ const a=run.a,b=run.b,big=val(a)>val(b)?a:b,small=big===a?b:a;
+ $('loss').innerHTML=`<b>${S.lossT}</b><div class="row"><span>${esc(txt(big).c)}</span><span>${esc(fmt(big))}</span></div><div class="row"><span>${esc(txt(small).c)}</span><span>${esc(fmt(small))}</span></div>`;
+ $('shareBtn').focus({preventScroll:true});bests()}
+async function share(){const S=t(),mode=run.mode==='daily'?S.dailyOn(today()):S.endless;const url='https://liyun-li.github.io/do-the-crime/'+(L==='en'?'':'?lang=zh');
+ const txtS=S.shareT(run.streak,mode)+'\n⚖️'+run.hist.map(x=>x?'🟩':'🟥').join('');
+ try{if(navigator.share){await navigator.share({text:txtS,url});return}}catch(e){if(e&&e.name==='AbortError')return}
+ try{await navigator.clipboard.writeText(txtS+'\n'+url);$('shareBtn').textContent=L==='en'?'COPIED ✓':'已複製 ✓';setTimeout(()=>$('shareBtn').textContent=S.share,1600)}catch(e){prompt('',txtS+'\n'+url)}}
+function seenList(){const S=t(),by=Object.fromEntries(D.cases.map(c=>[c.id,c]));$('dlgB').innerHTML=run.ids.map(id=>by[id]).filter(Boolean).map(c=>`<li><b>${esc(fmt(c))}</b> — ${esc(txt(c).c)} <a href="${esc(c.u)}" target="_blank" rel="noopener">${S.src}</a></li>`).join('');
+ $('dlg').showModal();history.pushState({dlg:1},'')}
+async function start(mode){if(!await load())return;newRun(mode);show('game');paint()}
+async function resume(){const s=JSON.parse(localStorage.getItem('dtc_run')||'null');if(!s||(s.mode==='daily'&&s.day!==today()))return false;if(!await load())return false;
+ const by=Object.fromEntries(D.cases.map(c=>[c.id,c]));
+ if(s.mode==='daily'){newRun('daily');while(run.ids.length<s.ids.length){const c=challenger(run.b,run.ids.length-1,run.R,run.seen);if(!c)break;run.a=run.b;run.b=c;run.seen.add(c.id);run.ids.push(c.id)}
+  if(run.ids.join()!==s.ids.join())return false;run.streak=s.streak;run.hist=s.hist;show('game');paint();return true}
+ POOL=poolFor(s.mode);const ids=s.ids.filter(i=>by[i]);if(ids.length<2)return false;
+ run={mode:s.mode,seed:s.seed,R:rng(s.seed+':'+ids.length),a:by[ids[ids.length-2]],b:by[ids[ids.length-1]],streak:s.streak,seen:new Set(ids),hist:s.hist,picked:null,ids};
+ show('game');paint();return true}
+// ---------- events ----------
+$('pA').onclick=()=>choose('A');$('pB').onclick=()=>choose('B');$('next').onclick=next;
+$('goBtn').onclick=()=>start('endless');$('dailyBtn').onclick=()=>start('daily');$('retryBtn').onclick=()=>start(run?run.mode:'endless');
+$('againBtn').onclick=()=>start(run&&run.mode==='daily'?'endless':'endless');$('shareBtn').onclick=share;$('seenBtn').onclick=seenList;
+$('dlgX').onclick=()=>history.back();$('dlg').addEventListener('close',()=>{if(history.state&&history.state.dlg)history.back()});
+addEventListener('popstate',()=>{if($('dlg').open)$('dlg').close()});
+$('home').onclick=()=>{show('start');bests()};
+$('langBtn').onclick=()=>{L=L==='en'?'zh-Hant':'en';localStorage.setItem('dtc_lang',L);
+ if(run&&$('game').classList.contains('on')&&run.mode==='endless'&&L!=='en'&&(!run.a.zc||!run.b.zc)){/* untranslated pair: keep going, text falls back to English */}
+ applyLang()};
+$('snd').onclick=()=>{sound=!sound;localStorage.setItem('dtc_snd',sound?'1':'0');$('snd').textContent=sound?'🔊':'🔇';$('snd').setAttribute('aria-pressed',sound);if(sound)beep(660,.06)};
+addEventListener('keydown',e=>{if($('dlg').open||!$('game').classList.contains('on'))return;if(e.key==='1'||e.key==='ArrowUp'||e.key==='ArrowLeft')choose('A');else if(e.key==='2'||e.key==='ArrowDown'||e.key==='ArrowRight')choose('B');else if((e.key==='Enter'||e.key===' ')&&run&&run.picked&&document.activeElement===document.body)next()});
+L=pickLang();$('snd').textContent=sound?'🔊':'🔇';$('snd').setAttribute('aria-pressed',sound);applyLang();resume();
+</script>
+</body></html>
