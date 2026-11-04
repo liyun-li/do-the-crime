@@ -1469,6 +1469,7 @@ Livermore
 Living
 Loadholt
 Lockhart
+Lodi
 Lombard
 London
 Long
@@ -1502,6 +1503,7 @@ Luke
 Lumberport
 Lumberton
 Luu
+Luzerne
 Lyn
 Lyndonville
 Lynn
@@ -1591,6 +1593,7 @@ Marvell
 Mary
 Maryland
 Marys
+Marysville
 Mason
 Massachusetts
 Masury
@@ -2092,6 +2095,7 @@ Rene
 Reno
 Renton
 Responsibility
+Reston
 Rhinelander
 Rhode
 Richard
