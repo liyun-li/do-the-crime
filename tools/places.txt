@@ -731,10 +731,12 @@ Dingman’s
 District
 Dmitry
 Dodge
+Dolomite
 Dominican
 Donaldsonville
 Donalsonville
 Dookhan
+Dorado
 Doral
 Dorchester
 Dothan
@@ -1672,6 +1674,7 @@ McDonald
 McDonough
 McDougal
 McIntosh
+McKees
 McKhoni
 McKinney
 McLaughlin
@@ -1838,6 +1841,7 @@ Natchez
 Natick
 National
 Naucalpan
+Navarre
 Navin
 Nazareth
 Nebraska
@@ -2214,6 +2218,7 @@ Rochester
 Rock
 Rockford
 Rockland
+Rocks
 Rockville
 Rockwell
 Rocky
@@ -2823,6 +2828,7 @@ Yaroslav
 Yates
 Yauco
 Yeadon
+Yerdon
 Yesterday
 Ygor
 Yigo
