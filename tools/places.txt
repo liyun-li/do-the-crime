@@ -289,6 +289,7 @@ Berthoud
 Berwick
 Bessemer
 BestCare
+Bethany
 Bethesda
 Bethlehem
 Beverly
@@ -2630,6 +2631,7 @@ United
 Unprecedented
 Unsuccessfully
 UpRiver
+Upland
 Upper
 Upton
 Urbana
