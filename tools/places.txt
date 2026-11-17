@@ -156,6 +156,7 @@ Arcadia
 Archer
 Ardmore
 Arecibo
+Arellano
 Ari
 Aristides
 Ariz
@@ -737,6 +738,7 @@ Dmitry
 Dodge
 Dolomite
 Dominican
+Donald
 Donaldsonville
 Donalsonville
 Dookhan
@@ -765,6 +767,7 @@ Dunbar
 Dunn
 Duong
 Dupree
+Duquesne
 Durham
 Dustin
 Dyer
@@ -1308,6 +1311,7 @@ Jennings
 Jensen
 Jeremy
 Jermaine
+Jerome
 Jersey
 Jesup
 Jesus
@@ -1407,6 +1411,7 @@ Knox
 Knoxville
 Kodiak
 Kovacs
+Kriens
 Krueger
 Kruse
 Kula
@@ -1945,6 +1950,7 @@ Orlando
 Orleans
 Ortiz
 Osage
+Oscar
 Oseguera
 Oswego
 Ottsville
@@ -2153,6 +2159,7 @@ Racehorse
 Racine
 Raleigh
 Raleigh.
+Ramirez
 Ramos
 Ramsey
 Ranches
@@ -2571,6 +2578,7 @@ Tolland
 Tommy
 Toms
 Tonda
+Toomsuba
 Toppenish
 Toronto
 Torrance
@@ -2684,6 +2692,7 @@ Vincent
 Vineland
 Vinita
 Vinton
+Virgil
 Virginia
 Voorhees
 W.
