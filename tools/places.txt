@@ -7,6 +7,7 @@ AC
 AHMAD
 AKRON
 AL
+ALABAMA
 ALBANY
 ALBANY-
 ALBUQUERQUE
@@ -250,6 +251,7 @@ Barrigada
 Barron
 Bartlett
 Barto
+Barton
 Bartonsville
 Bascom
 Base
@@ -388,6 +390,7 @@ Buckeye
 Buckley
 Bucyrus
 Buenas
+Bueno
 Buffalo
 Buford
 Bulgaria
@@ -536,6 +539,7 @@ Chihuahua
 China
 Chinese
 Chinle
+Chino
 Choctaw
 Christian
 Christine
@@ -696,6 +700,7 @@ Dawson
 Daxin
 De
 DeKalb
+DeMotte
 Dearborn
 Dearing
 Deatsville
@@ -2040,6 +2045,7 @@ Paul
 Payson
 Paz
 Peace
+Peach
 Pearland
 Peekskill
 Pekin
@@ -2064,6 +2070,7 @@ Petersburg
 Phenix
 Philadelphia
 Philip
+Phillipsburg
 Phoenix
 Photo
 Picayune
@@ -2753,6 +2760,7 @@ Wang
 Wapakoneta
 Wapato
 Warm
+Warminster
 Warrant
 Warren
 Warsaw
